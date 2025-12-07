@@ -53,8 +53,12 @@ function asyncwrap(fn){
 
 //home
 
+app.get("/signup",asyncwrap(async(req,res)=>{
+  res.render("signup");
+}));
+
+
 app.get("/home",asyncwrap(async(req,res)=>{
-  // let allchats = await Item.find();
   const uniqueCategories = await Item.distinct("category");
   res.render("home",{uniqueCategories});
 }));
