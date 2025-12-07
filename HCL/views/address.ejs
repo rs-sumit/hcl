@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Checkout | FoodHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="site-header">
+        <nav class="navbar container">
+            <a href="http://localhost:8080/home" class="navbar__brand">Food<span>Hub</span></a>
+            <div class="navbar__links">
+                <a href="/cart" class="nav-link">Cart</a>
+                <a href="/login" class="nav-link nav-link--primary">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CHECKOUT PAGE -->
+    <main class="checkout-page">
+        <div class="container checkout-layout">
+
+            <!-- LEFT: ADDRESS / DELIVERY DETAILS -->
+            <section class="checkout-form-card">
+                <h1>Delivery Details</h1>
+                <p class="checkout-subtext">
+                    Please enter your delivery address and contact details.
+                </p>
+
+                <form action="/order" method="POST" class="checkout-form">
+                    <!-- Full Name -->
+                    <div class="form-field">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter full name" required
+                            minlength="3" />
+                    </div>
+
+                    <!-- Mobile -->
+                    <div class="form-field">
+                        <label for="phone">Mobile Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number"
+                            pattern="[0-9]{10}" required />
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-field">
+                        <label for="email">Email (optional)</label>
+                        <input type="email" id="email" name="email" placeholder="Enter email" />
+                    </div>
+
+                    <!-- Address Line 1 -->
+                    <div class="form-field">
+                        <label for="address">Address Line </label>
+                        <input type="text" id="address" name="address" placeholder="House no, street" required />
+                    </div>
+
+                  
+
+                    <!-- City + State -->
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" placeholder="City" required />
+                        </div>
+
+                        <div class="form-field">
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state" placeholder="State" required />
+                        </div>
+                    </div>
+
+                    <!-- Pincode -->
+                    <div class="form-field">
+                        <label for="pincode">Pincode</label>
+                        <input type="text" id="pincode" name="pincode" placeholder="6-digit pincode" pattern="[0-9]{6}"
+                            required />
+                    </div>
+                    
+                </form>
+            </section>
+
+            <!-- RIGHT: ORDER SUMMARY -->
+            <aside class="checkout-summary-card">
+                <h2>Order Summary</h2>
+
+                <!-- You will fill these values from backend / JS -->
+                <div class="summary-row">
+                    <span>Items Total</span>
+                    <span id="summaryItemsTotal">₹520</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Delivery</span>
+                    <span>Free</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Discount</span>
+                    <span>₹0</span>
+                </div>
+
+                <div class="summary-row summary-row--total">
+                    <span>Final Amount</span>
+                    <span id="summaryFinalTotal">₹520</span>
+                </div>
+
+                <button type="button" class="checkout-place-btn" onclick="placeOrderNow()">
+                    Place Order
+                </button>
+
+                <p class="checkout-note">
+                    By placing this order, you agree to our terms and conditions.
+                </p>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 FoodHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function placeOrderNow() {
+            // Later: replace this with real POST to backend
+            alert('Order placed successfully! (Here we will call backend /order API)');
+            window.location.href = "http://localhost:8080/home";
+        }
+    </script>
+</body>
+
+</html>

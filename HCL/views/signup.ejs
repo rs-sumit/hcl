@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Signup | FoodHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="site-header">
+        <%-include("navbar.ejs")%>
+    </header>
+
+    <!-- SIGNUP FORM -->
+    <main class="auth-page">
+        <div class="auth-card">
+            <h2>Create Account</h2>
+
+            <form action="/signup" method="POST" class="auth-form">
+
+                <!-- Username -->
+                <label>Username</label>
+                <input type="text" name="username" required minlength="3" placeholder="Enter username">
+
+                <!-- Email -->
+                <label>Email</label>
+                <input type="email" name="email" required placeholder="Enter email">
+
+                <!-- Mobile -->
+                <label>Mobile Number</label>
+                <input type="tel" name="mobile" required pattern="[0-9]{10}" placeholder="10-digit mobile">
+
+                <!-- Password -->
+                <label>Password</label>
+                <input type="password" name="password" required minlength="6" placeholder="Minimum 6 characters">
+
+                <button type="submit">Sign Up</button>
+
+                <p class="auth-switch">
+                    Already have an account? <a href="http://localhost:8080/login">Login</a>
+                </p>
+
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>

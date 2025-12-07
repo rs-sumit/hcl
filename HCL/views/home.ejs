@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Ordering | Home</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- ========= NAVBAR ========= -->
+    <header class="site-header">
+    <%-include("navbar.ejs")%>
+    </header>
+    
+
+    <!-- ========= MAIN CONTENT ========= -->
+    <main class="site-main">
+        <section class="hero">
+            <div class="container hero__content">
+                <div class="hero__text">
+                    <h1>Fresh Food, Fast Delivery.</h1>
+                    <p>
+                        Order your favourite pizzas, cold drinks, and breads in just a few clicks.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Categories </h2>
+
+                <div class="category-grid">
+                    <!-- Cold Drinks -->
+                    <% for(let cat of uniqueCategories){ %>
+
+                        <a href="/details?category=<%= encodeURIComponent(cat) %>" class="category-card">
+                        <div class="category-card__image">
+                            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80"
+                                alt="Cold Drinks" />
+                        </div>
+                        <div class="category-card__body">
+                            <h3><%=cat%></h3>
+                            <p>Chilled soft drinks, juices and more.</p>
+                        </div>
+                    </a>
+
+                    <%}%>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========= FOOTER (optional, reusable) ========= -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 FoodHub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

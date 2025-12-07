@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Pizza | FoodHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="site-header">
+        <%-include("navbar.ejs")%>
+    </header>
+
+    <!-- CATEGORY HEADER -->
+    <main class="site-main">
+        <section class="category-header">
+            <div class="container">
+                <h1>Pizza</h1>
+                <p>Select from our range of freshly baked pizzas.</p>
+            </div>
+        </section>
+
+        <!-- PRODUCT LIST -->
+        <section class="product-section">
+            <div class="container">
+                <div class="product-list">
+
+                    <!-- ITEM 1 -->
+                    <% for(let item of allitems){ %>
+                    
+                        <article class="product-card">
+                            <div class="product-card__image">
+                                <img src="https://images.unsplash.com/photo-1548369937-47519962c11a?auto=format&fit=crop&w=800&q=80"
+                                    alt="Margherita Pizza" />
+                                <span class="badge badge--discount">20% OFF</span>
+                            </div>
+                            <div class="product-card__body">
+                                <div class="product-card__title-row">
+                                    <h3><%=item.name%></h3>
+                                    <span class="badge"><%=item.foodType%></span>
+                                </div>
+                                <p class="product-card__desc"><%=item.description%>
+                                </p>
+                                <div class="product-card__price-row">
+                                    <div>
+                                        <span class="price-current"><%=item.currentPrice%></span>
+                                        <span class="price-old"><%=item.price%></span>
+                                    </div>
+                                    <button type="button">Add to Cart</button>
+                                </div>
+                            </div>
+                        </article>
+                    
+                        <%}%>
+
+
+
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img src="https://images.unsplash.com/photo-1548369937-47519962c11a?auto=format&fit=crop&w=800&q=80"
+                                alt="Margherita Pizza" />
+                            <span class="badge badge--discount">20% OFF</span>
+                        </div>
+                        <div class="product-card__body">
+                            <div class="product-card__title-row">
+                                <h3>Margherita Pizza</h3>
+                                <span class="badge">Veg</span>
+                            </div>
+                            <p class="product-card__desc">
+                                Classic margherita with fresh mozzarella, basil, and tangy tomato sauce.
+                            </p>
+                            <div class="product-card__price-row">
+                                <div>
+                                    <span class="price-current">₹240</span>
+                                    <span class="price-old">₹300</span>
+                                </div>
+                                <button type="button">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ITEM 2 -->
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=800&q=80"
+                                alt="Farmhouse Pizza" />
+                            <span class="badge badge--discount">15% OFF</span>
+                        </div>
+                        <div class="product-card__body">
+                            <div class="product-card__title-row">
+                                <h3>Farmhouse Pizza</h3>
+                                <span class="badge">Veg</span>
+                            </div>
+                            <p class="product-card__desc">
+                                Loaded with onions, capsicum, tomatoes, and sweet corn on a cheesy base.
+                            </p>
+                            <div class="product-card__price-row">
+                                <div>
+                                    <span class="price-current">₹340</span>
+                                    <span class="price-old">₹400</span>
+                                </div>
+                                <button type="button">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ITEM 3 -->
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img src="https://images.unsplash.com/photo-1511689660979-10d2b1aada49?auto=format&fit=crop&w=800&q=80"
+                                alt="Pepperoni Pizza" />
+                            <span class="badge badge--discount">10% OFF</span>
+                        </div>
+                        <div class="product-card__body">
+                            <div class="product-card__title-row">
+                                <h3>Pepperoni Pizza</h3>
+                                <span class="badge">Non-Veg</span>
+                            </div>
+                            <p class="product-card__desc">
+                                Spicy pepperoni slices with extra cheese and signature pizza sauce.
+                            </p>
+                            <div class="product-card__price-row">
+                                <div>
+                                    <span class="price-current">₹360</span>
+                                    <span class="price-old">₹400</span>
+                                </div>
+                                <button type="button">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ITEM 4 -->
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80"
+                                alt="Cheese Burst Pizza" />
+                            <span class="badge badge--discount">25% OFF</span>
+                        </div>
+                        <div class="product-card__body">
+                            <div class="product-card__title-row">
+                                <h3>Cheese Burst Pizza</h3>
+                                <span class="badge">Veg</span>
+                            </div>
+                            <p class="product-card__desc">
+                                Extra cheesy, creamy base with a blend of mozzarella and cheddar.
+                            </p>
+                            <div class="product-card__price-row">
+                                <div>
+                                    <span class="price-current">₹300</span>
+                                    <span class="price-old">₹400</span>
+                                </div>
+                                <button type="button">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (optional) -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 FoodHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
